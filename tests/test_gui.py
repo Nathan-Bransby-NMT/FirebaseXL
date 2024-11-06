@@ -52,6 +52,7 @@ class TestGUI(unittest.TestCase):
 
     def tearDown(self):
         self.gui.destroy()
+        
 
 if __name__ == '__main__':
     unittest.main()
