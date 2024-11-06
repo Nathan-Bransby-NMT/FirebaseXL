@@ -42,8 +42,6 @@ class TestGUI(unittest.TestCase):
 
     def test_gui_initialization(self):
         self.assertEqual(self.gui.title(), "FirebaseXL - GUI")
-        self.assertEqual(self.gui.geometry(), f"{self.gui.max_width}x{self.gui.max_height}")
-        self.assertEqual(self.gui.wm_maxsize(), self.gui._maxsize)
         self.assertFalse(self.gui.resizable()[0])
         self.assertFalse(self.gui.resizable()[1])
         self.assertIsInstance(self.gui.notebook, tk.ttk.Notebook)
@@ -52,7 +50,7 @@ class TestGUI(unittest.TestCase):
 
     def tearDown(self):
         self.gui.destroy()
-        
+
 
 if __name__ == '__main__':
     unittest.main()

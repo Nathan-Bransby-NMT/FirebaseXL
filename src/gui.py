@@ -5,7 +5,7 @@ from PIL import Image, ImageTk
 
 
 class ToolTip:
-    
+
     def __init__(self, widget, text):
         self.widget = widget
         self.text = text
@@ -22,7 +22,7 @@ class ToolTip:
         tw.wm_geometry(f"+{x}+{y}")
         label = tk.Label(tw, text=self.text, justify="left", background="#ffffe0", relief="solid", borderwidth=1)
         label.pack()
-    
+
     def hide_tooltip(self, event):
         if self.tooltip_window:
             self.tooltip_window.destroy()
@@ -41,9 +41,9 @@ class ImportTab(tk.Frame):
         self._nullImage = ImageTk.PhotoImage(Image.open('./assets/null.png'))
 
         self.file_button = tk.Button(
-            self, image=self._nullImage, 
+            self, image=self._nullImage,
             command=lambda:self.toggle_file(),
-            background="#ffffff", relief=tk.RAISED, 
+            background="#ffffff", relief=tk.RAISED,
             borderwidth=1
         )
 
@@ -87,13 +87,11 @@ class GUI(tk.Tk):
 
     def launch(self) -> None:
         return self.mainloop()
-    
+
     @property
     def max_width(self) -> int:
         return self._maxsize[0]
-    
+
     @property
     def max_height(self) -> int:
         return self._maxsize[1]
-
-
