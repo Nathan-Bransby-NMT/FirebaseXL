@@ -22,6 +22,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install pillow
+        sudo apt-get install xvfb
     - name: Run tests
       run: |
-        python -m unittest discover -s tests
+        xvfb-run -a python -m unittest discover -s tests
